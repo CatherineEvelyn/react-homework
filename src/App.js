@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import ProductList from './ProductList';
-//import Cart from './Cart';
 import FlipCard from 'react-flipcard';
 
 class App extends Component {
@@ -65,29 +64,7 @@ class App extends Component {
   handleFlipCard(item) {
 
   }
- /* showBack() {
-    this.setState({
-      isFlipped: true
-    });
-  }
 
-  showFront() {
-    this.setState({
-      isFlipped: false
-    });
-  }
-
-  handleOnFlip(flipped) {
-    if (flipped) {
-      this.refs.backButton.getDOMNode().focus();
-    }
-  }
-
-  handleKeyDown(e) {
-    if (this.state.isFlipped && e.keyCode === 27) {
-      this.showFront();
-    }
-  }*/
 
   render() {
     return (
@@ -106,78 +83,3 @@ class App extends Component {
 
 export default App;
 
-
-  /*
-      <div id="container" className="App">
-        <div className="App-intro">
-          <div className="title-space">
-          </div>
-          <div className="title"> Topic A
-          </div>
-          <div className="title-space">
-          </div>
-          <div className="title"> Topic B
-          </div>
-          <div className="title-space">
-          </div>
-          <div className="title"> Topic C
-          </div>
-          <div className="white-bar">
-          </div>
-        </div>
-
-        <div className="App-intro">
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="white-bar">
-          </div>
-        </div>
-        
-        <div className="App-intro">
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="white-bar">
-          </div>
-        </div>
-
-        <div className="App-intro">
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="space">
-          </div>
-          <div className="box" onClick={this.handleClick}>
-          </div>
-          <div className="white-bar">
-          </div>
-        </div>
-
-      </div>
-    );
-  }
-}*/
