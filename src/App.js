@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import ProductList from './ProductList';
 import FlipCard from 'react-flipcard';
+import Cart from './Cart';
 
 class App extends Component {
   constructor(props) {
@@ -12,59 +13,63 @@ class App extends Component {
       isFlipped: false,
       items: [{
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
-        question: 'Which One?',
-        answer: 'B',
+        name: 'Which One?',
+        description: 'B',
         points: 100
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'Bill Murray!',
         description: 'I am Bill from Space Jam.',
-        price: 9.99
+        points: 9.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'Mystery Box',
         description: '????????',
-        price: 59.99
+        points: 59.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'Kittens!',
         description: 'Kittens are sometimes cute',
-        price: 19.99
+        points: 19.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'CORGIS!',
         description: 'Corgis are cute',
-        price: 99.99
+        points: 99.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'CORGIS!',
         description: 'Corgis are cute',
-        price: 99.99
+        points: 99.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'CORGIS!',
         description: 'Corgis are cute',
-        price: 99.99
+        points: 99.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'CORGIS!',
         description: 'Corgis are cute',
-        price: 99.99
+        points: 99.99
       }, {
         imageUrl: 'https://ak0.picdn.net/shutterstock/videos/21697270/thumb/1.jpg',
         name: 'BACON!',
         description: 'Bacon is delish!',
-        price: 19.99
-      }]
+        points: 19.99
+      }],
     };
 
     this.handleFlipCard = this.handleFlipCard.bind(this);
   }
 
   handleFlipCard(item) {
-
+    console.log("test")
+    this.setState({
+      cart: this.state.cart.concat(item),
+      items: [],
+      isFlipped: true
+    })
   }
-
 
   render() {
     return (
@@ -74,6 +79,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <ProductList items={this.state.items} handleFlipCard={this.handleFlipCard} />
+            <Cart cart={this.state.cart} />
           </div>
         </div>
       </div>
