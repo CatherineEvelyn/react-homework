@@ -1,35 +1,38 @@
 import React, { Component } from 'react';
+import "./index.css";
 
 class Cart extends Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickBack = this.handleClickBack.bind(this);
   }
 
-  handleClick(event) {
-    this.props.handleFlipCard(this.props);
-    console.log("hello")
+  handleClickBack(event) {
+    this.props.handleFlipCardBack(this.props);
   }
 
-  subtotal() {
-    return this.props.cart.reduce((prev, item) => {
-      return prev + item.points;
-    }, 0);
+  subtotal(cart) {
+    let score = 0;
+    for (let i=0; i < cart.length; i++) {
+      let x = cart[i];
+      score = score + x.points
+    }
+    return score
   }
 
   render() {
-    const { cart } = this.props;
+    const { cart, tempCardData } = this.props;
+    let x = tempCardData[0];
 
     return (
-      <div className="col col-sm-3">
-        <h1>Shopping Cart</h1>
+      <div className="card" id="back-of-card">
         <div className="cart">
-          {cart.map((item) =>{
-            return <div>{item.name} - {item.points}</div>
-          })}
-          <div><strong>Subtotal:</strong> {this.subtotal()}</div>
-          <div className="btn btn-primary btn-lg" onClick={this.handleClick}>Flip this card</div>
+
+            <div>{x.question} Points: {x.points}</div>
+
+          <div><strong>Total Score:</strong> {this.subtotal(cart)}</div>
+          <div className="btn btn-primary btn-lg" onClick={this.handleClickBack}>Flip this card</div>
         </div>
       </div>
     );

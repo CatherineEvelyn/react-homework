@@ -7,7 +7,7 @@ class ProductList extends Component {
 
     return (
       <div className="col">
-        <h1>Today's topic: Culinary</h1>
+        <h1 id="title">Today's topic: Culinary</h1>
         <div className="row">
           {items.map((it, index) => {
             return <Product key={index} {...it} handleFlipCard={handleFlipCard}>{it.name}</Product>;

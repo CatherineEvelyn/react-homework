@@ -1,5 +1,20 @@
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+#back-of-card {
+    background-color: lightblue;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: solid 4px white;
+    border-radius: 4px;
+    height: 600px;
+}
+
+#title {
+  color: white;
 }

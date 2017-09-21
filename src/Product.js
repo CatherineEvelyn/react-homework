@@ -12,12 +12,12 @@ class Product extends Component {
   }
 
   render() {
-    const { imageUrl, name, description, price } = this.props;
+    const { imageUrl, question, answer, points } = this.props;
 
     return (
       <div className="col col-xs-12 col-md-6 col-lg-4">
         <div>
-          <img src={imageUrl} alt={name} class="img-rounded" alt="Cinque Terre" width="350" height="100"/>
+          <img src={imageUrl} alt={question} class="img-rounded" alt="Cinque Terre" width="350" height="100"/>
         </div>
         <div className="btn btn-primary btn-lg" onClick={this.handleClick}>Flip this card</div>
         <p>.</p>
