@@ -3,6 +3,8 @@ import Header from './Header';
 import ProductList from './ProductList';
 import FlipCard from 'react-flipcard';
 import Cart from './Cart';
+import ReactCardFlip from 'react-card-flip';
+import Product from './Product';
 
 class App extends Component {
   constructor(props) {
@@ -71,6 +73,12 @@ class App extends Component {
     })
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ isFlipped: !this.state.isFlipped });
+  }
+
+
   render() {
     return (
  
@@ -82,6 +90,19 @@ class App extends Component {
             <Cart cart={this.state.cart} />
           </div>
         </div>
+
+      <ReactCardFlip isFlipped={this.state.isFlipped}>
+        <Cart key="front" cart={this.state.cart}>
+          This is the front of the card.
+          <button onClick={this.handleClick}>Click to flip</button>
+        </Cart>
+ 
+        <Product key="back">
+          This is the back of the card.
+          <button onClick={this.handleClick}>Click to flip</button>
+        </Product>
+      </ReactCardFlip>
+
       </div>
     );
   }
