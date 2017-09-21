@@ -65,11 +65,9 @@ class App extends Component {
   }
 
   handleFlipCard(item) {
-    console.log("test")
     this.setState({
       cart: this.state.cart.concat(item),
-      items: [],
-      isFlipped: true
+      isFlipped: !this.state.isFlipped
     })
   }
 
@@ -86,23 +84,19 @@ class App extends Component {
         <Header />
         <div className="container">
           <div className="row">
-            <ProductList items={this.state.items} handleFlipCard={this.handleFlipCard} />
-            <Cart cart={this.state.cart} />
+            <ReactCardFlip isFlipped={this.state.isFlipped}>
+              <ProductList key="front" items={this.state.items} handleFlipCard={this.handleFlipCard}>
+                This is the front of the card.
+                <button onClick={this.handleClick}>Click to flip</button>
+              </ProductList>
+      
+              <Cart key="back" cart={this.state.cart} handleFlipCard={this.handleFlipCard}>
+                This is the back of the card.
+                <button onClick={this.handleClick}>Click to flip</button>
+              </Cart>
+            </ReactCardFlip>
           </div>
         </div>
-
-      <ReactCardFlip isFlipped={this.state.isFlipped}>
-        <Cart key="front" cart={this.state.cart}>
-          This is the front of the card.
-          <button onClick={this.handleClick}>Click to flip</button>
-        </Cart>
- 
-        <Product key="back">
-          This is the back of the card.
-          <button onClick={this.handleClick}>Click to flip</button>
-        </Product>
-      </ReactCardFlip>
-
       </div>
     );
   }

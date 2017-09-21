@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.props.handleFlipCard(this.props);
+    console.log("hello")
+  }
 
   subtotal() {
     return this.props.cart.reduce((prev, item) => {
