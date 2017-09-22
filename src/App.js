@@ -12,56 +12,56 @@ class App extends Component {
       selectedCards: [],
       showAnswer: [],
       tempCardData: [{
-        subject: 'BACON!',
-        question: 'XXXXX?',
-        answer: 'B',
+        subject: 'Oil',
+        question: 'True or False: Canola oil has a higher smoke point than peanut oil',
+        answer: 'False',
         points: 100
       }], 
       isFlipped: false,
       cards: [{
-        subject: 'BACON!',
-        question: 'Which One?',
-        answer: 'B',
+        subject: 'Oil',
+        question: 'True or False: Canola oil has a higher smoke point than peanut oil',
+        answer: 'False',
         points: 100
       }, {
-        subject: 'BACON!',
-        question: 'Which One?',
-        answer: 'I am Bill from Space Jam.',
+        subject: 'Fun History',
+        question: 'On what vegetable did an ancient Egyptian place his right hand when taking an oath?',
+        answer: 'Onion',
         points: 200
       }, {
-        subject: 'BACON!',
-        question: 'Mystery Box',
-        answer: '????????',
+        subject: 'Say Cheese!',
+        question: 'What animals milk is used to make authentic Italian mozzarella cheese?',
+        answer: "The water buffalo's",
         points: 300
       }, {
-        subject: 'BACON!',
-        question: 'Kittens!',
-        answer: 'Kittens are sometimes cute',
+        subject: 'Cocktails',
+        question: 'What was the drink we know as the Bloody Mary originally called?',
+        answer: 'The Red Snapper',
         points: 400
       }, {
-        subject: 'BACON!',
-        question: 'CORGIS!',
-        answer: 'Corgis are cute',
+        subject: 'Nutrition',
+        question: 'What is the only essential vitamin not found in the white potato?',
+        answer: 'Vitamin A',
         points: 500
       }, {
-        subject: 'BACON!',
-        question: 'CORGIS!',
-        answer: 'Corgis are cute',
+        subject: 'Technique',
+        question: ' Blanching is quickly submerging vegetables in boiling water. What is it called when you then throw them into ice water?',
+        answer: 'Shocking',
         points: 600
       }, {
-        subject: 'BACON!',
-        question: 'CORGIS!',
-        answer: 'Corgis are cute',
+        subject: 'Ingredients',
+        question: 'A roux is used to thicken soups or sauces. It is usually made of:',
+        answer: 'Butter and flour',
         points: 700
       }, {
-        subject: 'BACON!',
-        question: 'CORGIS!',
-        answer: 'Corgis are cute',
+        subject: 'Family Tree',
+        question: 'Black-eyed peas are not peas.  What are they',
+        answer: 'Beans',
         points: 800
       }, {
-        subject: 'BACON!',
-        question: 'BACON!',
-        answer: 'Bacon is delish!',
+        subject: 'Italian Cuisine',
+        question: 'Pasta cooked al dente will be:',
+        answer: 'slightly firm to the bite',
         points: 900
       }],
     };
