@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedCard: [],
+      selectedCards: [],
+      showAnswer: [],
       tempCardData: [{
         subject: 'BACON!',
         question: 'XXXXX?',
@@ -67,6 +68,7 @@ class App extends Component {
 
     this.handleFlipCard = this.handleFlipCard.bind(this);
     this.handleFlipCardBack = this.handleFlipCardBack.bind(this);
+    this.handleShowAnswer = this.handleShowAnswer.bind(this);
   }
 
   handleFlipCard(selectCard) {
@@ -74,15 +76,27 @@ class App extends Component {
     y.push(selectCard);
 
     this.setState({
-      selectedCard: this.state.selectedCard.concat(selectCard),
+      selectedCards: this.state.selectedCards.concat(selectCard),
       tempCardData: y,
       isFlipped: !this.state.isFlipped
     })
   }
 
-  handleFlipCardBack(selectCard) {
+  handleFlipCardBack() {
     this.setState({
+      showAnswer: "",
       isFlipped: !this.state.isFlipped
+    })
+  }
+
+  handleShowAnswer(axax) {
+    console.log(axax)
+    let x = axax.tempCardData;
+    let y = x[0].answer;
+    console.log(y);
+
+    this.setState({
+      showAnswer: y
     })
   }
 
@@ -94,8 +108,15 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <ReactCardFlip isFlipped={this.state.isFlipped}>
-              <Front key="front" cards={this.state.cards} handleFlipCard={this.handleFlipCard} />
-              <Back key="back" tempCardData={this.state.tempCardData} selectedCard={this.state.selectedCard} handleFlipCardBack={this.handleFlipCardBack} />
+              <Front key="front"
+                cards={this.state.cards}
+                handleFlipCard={this.handleFlipCard} />
+              <Back key="back"
+                selectedCards={this.state.selectedCards}
+                showAnswer={this.state.showAnswer}
+                tempCardData={this.state.tempCardData}
+                handleFlipCardBack={this.handleFlipCardBack}
+                handleShowAnswer={this.handleShowAnswer} />
             </ReactCardFlip>
           </div>
         </div>
